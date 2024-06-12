@@ -1,0 +1,15 @@
+-- Total number of users
+SELECT COUNT(DISTINCT UserID) AS TotalUsers
+FROM SocialMediaUsage;
+
+-- Average time spent on each platform
+SELECT Platform, AVG(TimeSpentMinutes) AS AvgTimeSpent
+FROM SocialMediaUsage
+GROUP BY Platform;
+
+-- Platform with the highest average time spent
+SELECT Platform, MAX(TimeSpentMinutes) AS MaxTimeSpent
+FROM SocialMediaUsage
+GROUP BY Platform
+ORDER BY MaxTimeSpent DESC
+LIMIT 1;
